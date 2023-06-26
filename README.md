@@ -2,7 +2,7 @@
  simple photo editor
 This is a simple bitmap image editor written in Java. The program uses the Swing and AWT libraries to display the user interface. It allows you to open bitmap images in basic formats such as JPG, TIFF, and BMP. The application reads the image from disk and stores it as a BufferedImage object, which represents the image as an array of attributes corresponding to individual pixels. The RGB values of each coordinate are retrieved and stored in a triple array for applying filters and masks.
 
-# Features
+# FUNCTIONS:
 Opening Images: You can open bitmap images in BMP, JPG, and TIFF formats from your computer. Simply click the "Open Image" button and select a file from the file explorer.
 
 Saving Images: After making edits, you can save the image in BMP, JPG, or TIFF formats. Just select the appropriate format and click the "Save Image" button.
