@@ -1,39 +1,43 @@
 # -simple-photo-editor
  simple photo editor
-To jest prosty edytor obrazów bitmapowych napisany w języku Java. Program wykorzystuje bibliotekę Swing i AWT do wyświetlania interfejsu. Pozwala na otwieranie obrazów w popularnych formatach, takich jak JPG, TIFF i BMP. Obraz jest wczytywany z dysku i przechowywany w postaci tablicy atrybutów w obiekcie klasy BufferedImage, gdzie każdy atrybut odpowiada pikselowi. Można manipulować wartościami składowych RGB i stosować filtry i maski.
+This is a simple bitmap image editor written in Java. The program uses the Swing and AWT libraries to display the user interface. It allows you to open bitmap images in basic formats such as JPG, TIFF, and BMP. The application reads the image from disk and stores it as a BufferedImage object, which represents the image as an array of attributes corresponding to individual pixels. The RGB values of each coordinate are retrieved and stored in a triple array for applying filters and masks.
 
-Funkcje
-Otwieranie obrazów: Możesz wczytać obrazy bitmapowe w formatach BMP, JPG i TIFF z komputera. Wystarczy kliknąć przycisk "Otwórz obraz" i wybrać plik z eksploratora.
-Zapisywanie obrazów: Po dokonaniu edycji możesz zapisać obraz w formatach BMP, JPG lub TIFF. Po prostu wybierz odpowiedni format i kliknij przycisk "Zapisz obraz".
-Edycja całego obrazu: Możesz wykonywać różne operacje na całym obrazie, takie jak rotacja, pojaśnianie/pociemnianie itp.
-Rotacja: Możesz obracać obraz o 90 stopni. Operacja zamienia składowe x i y, wysokość staje się szerokością, a szerokość staje się wysokością. Składowe RGB na pozycji x, y są przenoszone na pozycję y, x.
-Pojaśnianie/pociemnianie: Możesz zmieniać jasność obrazu, dodając (pojaśnianie) lub odejmując (pociemnianie) wartości od składowych RGB. Program dba o to, aby wartości kolorów nie przekraczały dopuszczalnego zakresu.
-Edycja fragmentu obrazu: Możesz również dokonywać edycji wybranych fragmentów obrazu.
+#Features
+Opening Images: You can open bitmap images in BMP, JPG, and TIFF formats from your computer. Simply click the "Open Image" button and select a file from the file explorer.
 
-Zaznaczanie i wycięcie: Zaznacz interesujący cię obszar, klikając i przeciągając myszką. Gdy puścisz przycisk myszy, zostanie wyznaczony prostokątny obszar do wycięcia lub edycji. Zmodyfikowany fragment obrazu zostanie wyświetlony na ekranie.
+Saving Images: After making edits, you can save the image in BMP, JPG, or TIFF formats. Just select the appropriate format and click the "Save Image" button.
 
-Rysowanie pędzlem: Możesz zaznaczyć narzędzie "Pędzel" i klikając na obraz, narysować czarne kwadraty o rozmiarze 20x20 pikseli wokół klikniętego punktu. Wartość RGB pikseli zostanie ustawiona na czarny (000000).
+Editing the Entire Image: You can perform various operations on the entire image, such as rotation, brightness adjustment, etc.
 
-Detekcja krawędzi: Możesz użyć operatora Sobela do detekcji krawędzi. Operator ten składa się z 8 masek 3x3, które pozwalają na wykrycie krawędzi pod różnymi kątami. Wynikowy obraz będzie zawierał wygładzone krawędzie.
+Rotation: You can rotate the image by 90 degrees. This operation swaps the x and y components, where the height becomes the width and the width becomes the height. The RGB components at position x, y are moved to position y, x.
 
-Cofanie edycji: Program umożliwia cofanie wykonanych operacji. Możesz cofnąć ostatnią zmianę na obrazie lub anulować wiele ruchów, aż do stanu początkowego.
+Brightness Adjustment: You can change the brightness of the image by adding (brightening) or subtracting (darkening) values to the RGB components. The program ensures that the color values do not exceed critical values.
 
-Uruchamianie programu
-Aby uruchomić program, wykonaj następujące kroki:
+Editing Image Fragments: You can also perform edits on selected fragments of the image.
 
-Skompiluj kod źródłowy Java za pomocą kompilatora Javac.
+Selection and Cropping: Select the desired area by clicking and dragging the mouse. When you release the mouse button, a rectangular area for cropping or editing will be determined. The modified image fragment will be displayed on the screen.
 
-javac EdytorObrazow.java
-Uruchom program za pomocą maszyny wirtualnej Java (JVM).
+Brush Drawing: You can select the "Brush" tool and click on the image to draw black squares around the clicked point. Each square has a size of 20x20 pixels, and the RGB values of the pixels will be set to black (000000).
 
-Po uruchomieniu aplikacji pojawi się okno z interfejsem edytora obrazów.
+Edge Detection: You can use the Sobel operator for edge detection. The operator consists of 8 masks in a 3x3 matrix form, which allows for edge detection at different angles. The resulting image will have smoothed edges.
 
-Wybierz przycisk "Otwórz obraz", aby wczytać obraz z dysku.
+Undoing Edits: The program allows you to undo the performed operations. You can undo the last change on the image or cancel multiple moves until reaching the initial state.
 
-Wykonuj różne operacje na obrazie, korzystając z dostępnych przycisków i narzędzi.
+#Running the Program
+To run the program, follow these steps:
 
-Możesz zapisać zmodyfikowany obraz, wybierając format (BMP, JPG, TIFF) i klikając przycisk "Zapisz obraz".
+Compile the Java source code using the Java compiler .
 
-Aby cofnąć ostatnią operację, kliknij przycisk "Cofnij".
+Run the program using the Java Virtual Machine (JVM).
 
-Aby zakończyć program, zamknij okno aplikacji.
+After launching the application, a window with the image editor interface will appear.
+
+Select the "Open Image" button to load an image from your disk.
+
+Perform various operations on the image using the available buttons and tools.
+
+You can save the modified image by selecting the format (BMP, JPG, TIFF) and clicking the "Save Image" button.
+
+To undo the last operation, click the "Undo" button.
+
+To exit the program, close the application window.
